@@ -1,0 +1,34 @@
+#######################################
+# Syntax Coloring Map RFM69_SessionKey
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+RFM69X_SessionKey	KEYWORD2
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+initialize	KEYWORD2
+useSessionKey	KEYWORD2
+sessionKeyEnabled	KEYWORD2
+useSession3Acks	KEYWORD2
+session3AcksEnabled	KEYWORD2
+sessionWaitTime	KEYWORD2
+sessionRespDelayTime	KEYWORD2
+send	KEYWORD2
+receiveDone	KEYWORD2
+sendACK	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
+#######################################
+# Variables/Volatiles (LITERAL2)
+#######################################
+SESSION_KEY_INCLUDED 	LITERAL2
+SESSION_KEY_REQUESTED 	LITERAL2
+SESSION_KEY_RCV_STATUS	LITERAL2
