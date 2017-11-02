@@ -9,7 +9,7 @@
  */
 
 /*** OPTIONS ***/
-#define RFM_SESSION         // If Session Key is used; to be removed for a normal RFM69 instance
+//#define RFM_SESSION         // If Session Key is used; to be removed for a normal RFM69 instance
                             // This parameter validates the RFM69_SessionKey  or RFM69X_SessionKey library according to the "X" parameter
 #define X                   // This parameter validates one the libraries the basic one RFM69 or eXtended oneRFM69X
 
@@ -55,7 +55,7 @@ boolean IS_RFM69HW = true; // If High power RFM69HW is used
 // Adapt configuration against the processor Type
 #ifdef __AVR_ATmega1284P__
   #define LED         15        // Moteino MEGA have LED on D15
-  #define RFM_SS      10        // Default Slave Select GPIO15 for ESP8266 SS
+  #define RFM_SS      4         // Default Slave Select Moteino MEGA 
   #define RFM_INT     2         // One if a free GPIO supporting Interrupts
 #endif
 #ifdef __AVR_ATmega328P__
@@ -81,7 +81,11 @@ boolean IS_RFM69HW = true; // If High power RFM69HW is used
   #define RFM_INT     19         // One if a free GPIO supporting Interrupts
 #endif 
 
+#ifdef __AVR_ATmega1284P__
+byte RFM_INTNUM = 2; // digitalPinToInterrupt doesn't work for ATmeg1284p
+#else
 byte RFM_INTNUM = digitalPinToInterrupt(RFM_INT);  // Standard way to convert Interrupt pin in interrupt number  
+#endif
 
 int TRANSMITPERIOD = 200;        // Transmit a packet to gateway so often (in ms)
 byte sendSize=0;
